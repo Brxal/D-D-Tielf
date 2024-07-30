@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img"
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center_horizontal"> <!-- Centra horizontalmente -->
+        android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,19 +24,15 @@
             android:text="MENÚ"
             android:textColor="#000000"
             android:textSize="60sp"
-            android:gravity="center"
-            />
+            android:gravity="center"/>
 
         <ImageView
             android:layout_width="215dp"
             android:layout_height="227dp"
-            android:src="@drawable/dadito" />
-
-
+            android:src="@drawable/dadito"/>
     </LinearLayout>
 
-
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +45,6 @@
         app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -60,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="DM'S"
                 android:textSize="40sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"/>
 
             <Button
                 android:id="@+id/CAMPANA"
@@ -69,12 +64,10 @@
                 android:backgroundTint="@color/casilla"
                 android:text="Campaña"
                 android:textSize="20sp"
-                android:textColor="@color/black" />
-
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -85,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="PLAYER"
                 android:textSize="40sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"/>
 
             <Button
                 android:id="@+id/playerpj"
@@ -94,12 +87,10 @@
                 android:backgroundTint="@color/casilla"
                 android:text="Personajes"
                 android:textSize="20sp"
-                android:textColor="@color/black" />
-
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -110,24 +101,19 @@
                 android:layout_height="wrap_content"
                 android:text="NOTAS"
                 android:textSize="40sp"
-                android:textColor="@color/black" />
-
+                android:textColor="@color/black"/>
 
             <Button
                 android:id="@+id/notas"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:backgroundTint="@color/casilla"
                 android:text="Apuntes"
                 android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_margin="8dp" />
-
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -138,24 +124,19 @@
                 android:layout_height="wrap_content"
                 android:text="INFO."
                 android:textSize="40sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"/>
 
-
-        <Button
-            android:id="@+id/contentpdf"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/casilla"
-            android:text="Contenido"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_margin="8dp" />
-
-    </LinearLayout>
+            <Button
+                android:id="@+id/contentpdf"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/casilla"
+                android:text="Contenido"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
 
     </GridLayout>
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
