@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">D&amp;D Tielf</string>
+    <string name="campanas">Campañas</string>
+    <string name="notas_dm">Notas DM</string>
+    <string name="personajes">Personajes</string>
+    <string name="notas_pj">Notas PJ</string>
 </resources>
