@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,6 +8,153 @@
     android:layout_height="match_parent"
     android:background="@drawable/img"
     tools:context=".menu_dd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"> <!-- Centra horizontalmente -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_blanco_transparente"
+            android:padding="16dp"
+            android:text="MENÚ"
+            android:textColor="#000000"
+            android:textSize="60sp"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="227dp"
+            android:src="@drawable/dadito" />
+
+
+    </LinearLayout>
+
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DM'S"
+                android:textSize="40sp"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/CAMPANA"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/casilla"
+                android:text="Campaña"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAYER"
+                android:textSize="40sp"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/playerpj"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/casilla"
+                android:text="Personajes"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOTAS"
+                android:textSize="40sp"
+                android:textColor="@color/black" />
+
+
+            <Button
+                android:id="@+id/notas"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/casilla"
+                android:text="Apuntes"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_margin="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFO."
+                android:textSize="40sp"
+                android:textColor="@color/black" />
+
+
+        <Button
+            android:id="@+id/contentpdf"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/casilla"
+            android:text="Contenido"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_margin="8dp" />
+
+    </LinearLayout>
+
+    </GridLayout>
 
 
 

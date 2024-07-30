@@ -2,5 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dd">#BE695A</color>
+    <color name="casilla">#976C4E</color>
+    <color name="color_blanco_transparente">#7B4A28</color>
 
 </resources>
