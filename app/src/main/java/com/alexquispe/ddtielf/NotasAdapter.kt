@@ -1,33 +1,35 @@
 package com.alexquispe.ddtielf
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class NotasAdapter(private val notes: List<String>, private val onNoteClick: (String) -> Unit) : RecyclerView.Adapter<NotasAdapter.NoteViewHolder>() {
+class NotasAdapter(
+    private val notes: List<String>,
+    private val clickListener: (String) -> Unit
+) : RecyclerView.Adapter<NotasAdapter.NotaViewHolder>() {
 
-    class NoteViewHolder(itemView: View, private val onNoteClick: (String) -> Unit) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.textViewNote)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotaViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
+        return NotaViewHolder(view)
+    }
 
-        fun bind(note: String) {
-            textView.text = note
-            itemView.setOnClickListener {
-                onNoteClick(note)
-            }
+    override fun onBindViewHolder(holder: NotaViewHolder, position: Int) {
+        val note = notes[position]
+        holder.bind(note, clickListener)
+    }
+
+    override fun getItemCount(): Int = notes.size
+
+    class NotaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val noteTitle: TextView = itemView.findViewById(R.id.noteTitle)
+
+        fun bind(note: String, clickListener: (String) -> Unit) {
+            noteTitle.text = note
+            itemView.setOnClickListener { clickListener(note) }
         }
     }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
-        return NoteViewHolder(view, onNoteClick)
-    }
-
-    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.bind(notes[position])
-    }
-
-    override fun getItemCount() = notes.size
 }
+
