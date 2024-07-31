@@ -25,7 +25,7 @@ class NotasListActivity : AppCompatActivity() {
         fabAddNote = findViewById(R.id.fabAddNote)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val notes = loadNotes()
+        val notes = loadNotes().toMutableList()
         if (notes.isEmpty()) {
             emptyView.visibility = TextView.VISIBLE
             recyclerView.visibility = RecyclerView.GONE
@@ -34,12 +34,21 @@ class NotasListActivity : AppCompatActivity() {
             recyclerView.visibility = RecyclerView.VISIBLE
         }
 
-        adapter = NotasAdapter(notes) { noteTitle ->
+        adapter = NotasAdapter(notes, { noteTitle ->
             val intent = Intent(this, notas_activity::class.java).apply {
                 putExtra("NOTE_TITLE", noteTitle)
             }
             startActivity(intent)
-        }
+        }, { noteTitle ->
+            deleteNote(noteTitle)
+            notes.remove(noteTitle)
+            adapter.notifyDataSetChanged()
+            if (notes.isEmpty()) {
+                emptyView.visibility = TextView.VISIBLE
+                recyclerView.visibility = RecyclerView.GONE
+            }
+        })
+
         recyclerView.adapter = adapter
 
         fabAddNote.setOnClickListener {
@@ -52,7 +61,12 @@ class NotasListActivity : AppCompatActivity() {
         val notesDir = filesDir
         return notesDir.list()?.map { it.removeSuffix(".txt") } ?: emptyList()
     }
+
+    private fun deleteNote(title: String) {
+        val file = File(filesDir, "$title.txt")
+        if (file.exists()) {
+            file.delete()
+        }
+    }
 }
-
-
 
