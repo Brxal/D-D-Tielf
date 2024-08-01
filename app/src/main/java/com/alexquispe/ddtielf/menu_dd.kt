@@ -6,8 +6,6 @@ import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class menu_dd : AppCompatActivity() {
@@ -34,16 +32,19 @@ class menu_dd : AppCompatActivity() {
             finish()
         }
 
-        // Configura el botón "Contenido"
         val contentPdfButton = findViewById<Button>(R.id.contentpdf)
         contentPdfButton.setOnClickListener {
-            // URL del PDF
             val pdfUrl = "https://huertadesolymar.uy/D%26D5Manual.pdf"
             val intent = Intent(this, PdfViewerActivity::class.java).apply {
                 putExtra("pdfUrl", pdfUrl)
             }
             startActivity(intent)
         }
+
+        val rollDiceButton = findViewById<Button>(R.id.rollDice)
+        rollDiceButton.setOnClickListener {
+            val intent = Intent(this, DiceRollerActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
-

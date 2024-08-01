@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/dd"
+                android:fontFamily="@font/fuentebinoto"
                 android:text="REGISTRAR" />
 
             <Space
@@ -65,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/fuentebinoto"
                 android:backgroundTint="@color/dd"
                 android:text="ACCEDER" />
         </LinearLayout>
@@ -75,6 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Iniciar sesión con Google"
-            android:backgroundTint="@color/dd" />
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
