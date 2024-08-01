@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.io.File
 
 class NotasListActivity : AppCompatActivity() {
 
@@ -15,17 +14,37 @@ class NotasListActivity : AppCompatActivity() {
     private lateinit var adapter: NotasAdapter
     private lateinit var emptyView: TextView
     private lateinit var fabAddNote: FloatingActionButton
+    private lateinit var noteRepository: NoteRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas_list)
+
+        noteRepository = NoteRepository(this)
 
         recyclerView = findViewById(R.id.recyclerView)
         emptyView = findViewById(R.id.emptyView)
         fabAddNote = findViewById(R.id.fabAddNote)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val notes = loadNotes().toMutableList()
+        loadNotesFromDatabase()
+
+        fabAddNote.setOnClickListener {
+            val intent = Intent(this, notas_activity::class.java)
+            startActivityForResult(intent, REQUEST_CODE_ADD_NOTE)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_ADD_NOTE && resultCode == RESULT_OK) {
+            // Actualiza la lista de notas
+            loadNotesFromDatabase()
+        }
+    }
+
+    private fun loadNotesFromDatabase() {
+        val notes = noteRepository.getAllNotes().map { it.first }.toMutableList()
         if (notes.isEmpty()) {
             emptyView.visibility = TextView.VISIBLE
             recyclerView.visibility = RecyclerView.GONE
@@ -33,14 +52,13 @@ class NotasListActivity : AppCompatActivity() {
             emptyView.visibility = TextView.GONE
             recyclerView.visibility = RecyclerView.VISIBLE
         }
-
         adapter = NotasAdapter(notes, { noteTitle ->
             val intent = Intent(this, notas_activity::class.java).apply {
                 putExtra("NOTE_TITLE", noteTitle)
             }
-            startActivity(intent)
+            startActivityForResult(intent, REQUEST_CODE_ADD_NOTE)
         }, { noteTitle ->
-            deleteNote(noteTitle)
+            noteRepository.deleteNoteByTitle(noteTitle)
             notes.remove(noteTitle)
             adapter.notifyDataSetChanged()
             if (notes.isEmpty()) {
@@ -48,25 +66,12 @@ class NotasListActivity : AppCompatActivity() {
                 recyclerView.visibility = RecyclerView.GONE
             }
         })
-
         recyclerView.adapter = adapter
-
-        fabAddNote.setOnClickListener {
-            val intent = Intent(this, notas_activity::class.java)
-            startActivity(intent)
-        }
     }
 
-    private fun loadNotes(): List<String> {
-        val notesDir = filesDir
-        return notesDir.list()?.map { it.removeSuffix(".txt") } ?: emptyList()
-    }
-
-    private fun deleteNote(title: String) {
-        val file = File(filesDir, "$title.txt")
-        if (file.exists()) {
-            file.delete()
-        }
+    companion object {
+        private const val REQUEST_CODE_ADD_NOTE = 1
     }
 }
+
 
