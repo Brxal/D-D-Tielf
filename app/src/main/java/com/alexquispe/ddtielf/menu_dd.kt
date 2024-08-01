@@ -15,7 +15,7 @@ class menu_dd : AppCompatActivity() {
 
         val botonN = findViewById<Button>(R.id.notas)
         botonN.setOnClickListener {
-            val intent = Intent(this, notas_activity::class.java)
+            val intent = Intent(this, NotasListActivity::class.java)
             startActivity(intent)
         }
     }
