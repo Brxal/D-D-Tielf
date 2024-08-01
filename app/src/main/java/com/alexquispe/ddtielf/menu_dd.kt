@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class menu_dd : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,6 +32,17 @@ class menu_dd : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
+        }
+
+        // Configura el botón "Contenido"
+        val contentPdfButton = findViewById<Button>(R.id.contentpdf)
+        contentPdfButton.setOnClickListener {
+            // URL del PDF
+            val pdfUrl = "https://huertadesolymar.uy/D%26D5Manual.pdf"
+            val intent = Intent(this, PdfViewerActivity::class.java).apply {
+                putExtra("pdfUrl", pdfUrl)
+            }
+            startActivity(intent)
         }
     }
 }

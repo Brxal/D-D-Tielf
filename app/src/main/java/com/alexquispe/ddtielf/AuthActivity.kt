@@ -17,8 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.android.gms.common.api.ApiException
 
-
-
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
@@ -59,8 +57,14 @@ class AuthActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        // Setup
-        setup()
+        // Check if user is already signed in
+        if (auth.currentUser != null) {
+            // User is signed in, redirect to the menu
+            showMenu(auth.currentUser?.email ?: "", ProviderType.BASIC)
+        } else {
+            // Setup login UI
+            setup()
+        }
     }
 
     private fun setup() {
@@ -119,6 +123,7 @@ class AuthActivity : AppCompatActivity() {
             putExtra("provider", provider.name)
         }
         startActivity(menuIntent)
+        finish() // Close the AuthActivity to prevent going back to it
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -151,7 +156,6 @@ class AuthActivity : AppCompatActivity() {
         private const val RC_SIGN_IN = 9001
     }
 }
-
 
 
 
