@@ -8,7 +8,6 @@
     android:background="@drawable/img_1"
     tools:context=".AuthActivity">
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -43,10 +42,9 @@
             android:hint="Constraseña"
             android:inputType="textPassword" />
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -69,8 +67,14 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/dd"
                 android:text="ACCEDER" />
-
         </LinearLayout>
 
+        <Button
+            android:id="@+id/googleSignInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Iniciar sesión con Google"
+            android:backgroundTint="@color/dd" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

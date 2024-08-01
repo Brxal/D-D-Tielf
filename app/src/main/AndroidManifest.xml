@@ -30,9 +30,7 @@
             android:name=".NotasListActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".notasave"
-            android:exported="false" />
+
 
         <activity
             android:name=".notas_activity"
@@ -41,6 +39,8 @@
         <activity
             android:name=".menu_dd"
             android:exported="false" />
+
+
     </application>
 
 </manifest>

@@ -5,5 +5,9 @@
     <string name="personajes">Personajes</string>
     <string name="notas_pj">Notas PJ</string>
 
-    <string name="prefs_file">com.alexquispe.ddtielf.PREFERENCE_FILE_KEY</string>
+
+    <string name="prefs_file">com.alexquispe.ddtielf.PREFERENCES</string>
+
+    <string name="default_web_client_id">your-web-client-id</string>
+
 </resources>
