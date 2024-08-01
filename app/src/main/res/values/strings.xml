@@ -4,4 +4,6 @@
     <string name="notas_dm">Notas DM</string>
     <string name="personajes">Personajes</string>
     <string name="notas_pj">Notas PJ</string>
+
+    <string name="prefs_file">com.alexquispe.ddtielf.PREFERENCE_FILE_KEY</string>
 </resources>
