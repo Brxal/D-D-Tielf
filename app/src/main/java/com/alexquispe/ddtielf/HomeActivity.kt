@@ -1,5 +1,7 @@
 package com.alexquispe.ddtielf
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -38,6 +40,8 @@ class HomeActivity : AppCompatActivity() {
         val email = intent.getStringExtra("email") ?: ""
         val provider = intent.getStringExtra("provider") ?: ""
         setup(email, provider)
+        //guardar datos
+
     }
 
     private fun setup(email: String, provider: String) {
