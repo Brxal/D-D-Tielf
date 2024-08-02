@@ -32,18 +32,24 @@ class menu_dd : AppCompatActivity() {
             finish()
         }
 
-        val contentPdfButton = findViewById<Button>(R.id.contentpdf)
-        contentPdfButton.setOnClickListener {
-            val pdfUrl = "https://huertadesolymar.uy/D%26D5Manual.pdf"
-            val intent = Intent(this, PdfViewerActivity::class.java).apply {
-                putExtra("pdfUrl", pdfUrl)
-            }
-            startActivity(intent)
-        }
-
         val rollDiceButton = findViewById<Button>(R.id.rollDice)
         rollDiceButton.setOnClickListener {
             val intent = Intent(this, DiceRollerActivity::class.java)
+            startActivity(intent)
+        }
+
+        val playerpj = findViewById<Button>(R.id.playerpj)
+        playerpj.setOnClickListener {
+            val intent = Intent(this, CharacterListActivity::class.java)
+            startActivity(intent)
+        }
+
+        val contentPdfButton = findViewById<Button>(R.id.contentpdf)
+        contentPdfButton.setOnClickListener {
+            val pdfUrl = "https://media.wizards.com/2022/dnd/downloads/dnd_encounter_drownedsailors_ES.pdf"
+            val intent = Intent(this, PdfViewerActivity::class.java).apply {
+                putExtra("pdfUrl", pdfUrl)
+            }
             startActivity(intent)
         }
     }

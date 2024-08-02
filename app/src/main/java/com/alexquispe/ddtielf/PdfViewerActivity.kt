@@ -1,6 +1,7 @@
 package com.alexquispe.ddtielf
 
 import android.os.Bundle
+import android.util.Log
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -20,11 +21,14 @@ class PdfViewerActivity : AppCompatActivity() {
         val webSettings = pdfWebView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
+        webSettings.loadWithOverviewMode = true
+        webSettings.useWideViewPort = true
 
         pdfWebView.webViewClient = WebViewClient()
 
         // URL del PDF
         val pdfUrl = intent.getStringExtra("pdfUrl") ?: ""
+        Log.d("PdfViewerActivity", "Loading PDF URL: $pdfUrl")
         pdfWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=$pdfUrl")
     }
 }
