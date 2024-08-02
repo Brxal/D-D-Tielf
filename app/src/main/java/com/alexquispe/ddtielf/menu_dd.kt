@@ -20,6 +20,12 @@ class menu_dd : AppCompatActivity() {
             val intent = Intent(this, NotasListActivity::class.java)
             startActivity(intent)
         }
+// En tu archivo menu_dd.kt
+        val createCampaignButton = findViewById<Button>(R.id.CAMPANA)
+        createCampaignButton.setOnClickListener {
+            val intent = Intent(this, CampaignListActivity::class.java)
+            startActivity(intent)
+        }
 
         val logOutButton = findViewById<Button>(R.id.logOutButton)
         logOutButton.setOnClickListener {
