@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/img_6">
 
     <TextView
         android:id="@+id/characterName"
@@ -49,6 +50,8 @@
         android:id="@+id/addMoreCharactersButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/dd"
+        android:fontFamily="@font/fuentebinoto"
         android:text="Agregar Más Personajes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

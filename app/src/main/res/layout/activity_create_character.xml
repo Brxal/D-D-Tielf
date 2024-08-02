@@ -4,12 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/img_6">
 
     <EditText
         android:id="@+id/characterName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/casillamenu"
         android:hint="Nombre del personaje"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +22,7 @@
         android:id="@+id/raceSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/casillamenu"
         app:layout_constraintTop_toBottomOf="@id/characterName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +32,7 @@
         android:id="@+id/classSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/casillamenu"
         app:layout_constraintTop_toBottomOf="@id/raceSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +42,7 @@
         android:id="@+id/characterDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/casillamenu"
         android:hint="Descripción del personaje"
         app:layout_constraintTop_toBottomOf="@id/classSpinner"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +53,8 @@
         android:id="@+id/saveCharacterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/fuentebinoto"
+        android:backgroundTint="@color/dd"
         android:text="Guardar personaje"
         app:layout_constraintTop_toBottomOf="@id/characterDescription"
         app:layout_constraintStart_toStartOf="parent"

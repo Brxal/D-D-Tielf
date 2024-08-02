@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/img_6">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/characterRecyclerView"
@@ -31,6 +32,8 @@
             android:id="@+id/addMoreCharactersButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/fuentebinoto"
+            android:backgroundTint="@color/dd"
             android:text="Agregar personajes"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"/>
@@ -39,6 +42,8 @@
             android:id="@+id/backToMenuButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/fuentebinoto"
+            android:backgroundTint="@color/dd"
             android:text="Regresar al menú"
             android:layout_weight="1"
             android:layout_marginStart="8dp"/>
