@@ -11,7 +11,7 @@
         android:id="@+id/characterName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/casillamenu"
+
         android:hint="Nombre del personaje"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/raceSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/casillamenu"
+
         app:layout_constraintTop_toBottomOf="@id/characterName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/classSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/casillamenu"
+
         app:layout_constraintTop_toBottomOf="@id/raceSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:id="@+id/characterDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/casillamenu"
+
         android:hint="Descripción del personaje"
         app:layout_constraintTop_toBottomOf="@id/classSpinner"
         app:layout_constraintStart_toStartOf="parent"
